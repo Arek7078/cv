@@ -67,3 +67,25 @@ const language = {
   },
 };
 
+const langBtn = document.getElementById("langBtn");
+
+export function changeLanguage(lang){
+    langBtn.addEventListener('click', ()=>{
+        if(lang === "pl"){
+            lang = "eng";
+            langBtn.innerHTML = '<img src="./public/assets/poland.png" alt="pl" width="40px" height="30px" style="border-radius: 10px;">';
+        } else {
+            lang = "pl";
+            langBtn.innerHTML = '<img src="./public/assets/united-kingdom.png" alt="eng" width="40px" height="30px" style="border-radius: 10px;">';
+        }
+
+        document.querySelectorAll("[data-key]").forEach((el)=>{
+            const key = el.getAttribute("data-key");
+            if(language[lang][key]){
+                el.textContent = language[lang][key];
+            }
+        });
+        
+    })
+
+}
