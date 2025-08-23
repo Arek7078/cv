@@ -30,6 +30,7 @@ const language = {
     course2: "Front-end i back-end nowoczesnych aplikacji",
     education: "WYKSZTAŁCENIE",
     edu1: "Zespół Szkół Zawodowych im. mjra Henryka Sucharskiego w Złotoryi Wykształcenie średnie",
+    download: "Pobierz"
   },
   eng: {
     skills: "Skills and Specializations",
@@ -64,6 +65,7 @@ const language = {
     course2: "Front-end and back-end of modern applications",
     education: "EDUCATION",
     edu1: "Vocational School Complex named after Major Henryk Sucharski in Złotoryja Secondary education",
+    download: "Download"
   },
 };
 
