@@ -68,24 +68,32 @@ const language = {
 };
 
 const langBtn = document.getElementById("langBtn");
+const langImg = langBtn.querySelector("img");
+let currentLang = "pl";
 
-export function changeLanguage(lang){
-    langBtn.addEventListener('click', ()=>{
-        if(lang === "pl"){
-            lang = "eng";
-            langBtn.innerHTML = '<img src="./public/assets/poland.png" alt="pl" width="40px" height="30px" style="border-radius: 10px;">';
-        } else {
-            lang = "pl";
-            langBtn.innerHTML = '<img src="./public/assets/united-kingdom.png" alt="eng" width="40px" height="30px" style="border-radius: 10px;">';
-        }
-
-        document.querySelectorAll("[data-key]").forEach((el)=>{
-            const key = el.getAttribute("data-key");
-            if(language[lang][key]){
-                el.textContent = language[lang][key];
-            }
-        });
-        
-    })
-
+export function changeLanguage() {
+  langBtn.addEventListener("click", () => {
+    if (currentLang === "pl") {
+      currentLang = "eng";
+      langImg.src = "./public/assets/poland.png";
+      langImg.alt = "pl";
+    } else {
+      currentLang = "pl";
+      langImg.src = "./public/assets/united-kingdom.png";
+      langImg.alt = "eng";
+    }
+    document.querySelectorAll("[data-key]").forEach((el) => {
+      const key = el.getAttribute("data-key");
+      if (language[currentLang][key]) {
+        el.textContent = language[currentLang][key];
+      }
+    });
+  });
+  // Ustaw język na starcie
+  document.querySelectorAll("[data-key]").forEach((el) => {
+    const key = el.getAttribute("data-key");
+    if (language[currentLang][key]) {
+      el.textContent = language[currentLang][key];
+    }
+  });
 }
