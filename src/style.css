@@ -21,12 +21,13 @@ body{
 } */
 main{
     display:flex;
-    width:768px;
+    width:60%;
+    height: 100vh;
     position:relative;
     margin:auto;
-    margin: 1rem auto;
+    /* margin: 1rem auto;
     border: 1px solid white;
-    box-shadow:0 0 10px rgba(0, 0, 0, 0.5);
+    box-shadow:0 0 10px rgba(0, 0, 0, 0.5); */
     
 }
 /* contact start */
