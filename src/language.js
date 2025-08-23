@@ -9,7 +9,7 @@ const language = {
     languages: "Języki",
     lang1: "Polski - język ojczysty",
     lang2: "Angielski - zaawansowany",
-    expierience: "DOŚWIADCZENIE ZAWODOWE",
+    experience: "DOŚWIADCZENIE ZAWODOWE",
     job1: "09.2021 - obecnie | Leadhand - Vitalograph, Ennis, Co. Clare, Irlandia",
     job2: "08.2018 – 09.2021 | Manager – McDonald’s, Ennis, Co. Clare, Irlandia",
     jobDescription1: "Zarządzanie zespołem produkcyjnym podczas zmiany.",
@@ -41,7 +41,7 @@ const language = {
     languages: "Languages",
     lang1: "Polish - native",
     lang2: "English - advanced",
-    expierience: "WORK EXPERIENCE",
+    experience: "WORK EXPERIENCE",
     job1: "09.2021 - present | Leadhand - Vitalograph, Ennis, Co. Clare, Ireland",
     job2: "08.2018 – 09.2021 | Manager – McDonald’s, Ennis, Co. Clare, Ireland",
     jobDescription1: "Managing the production team during the shift.",
@@ -66,3 +66,26 @@ const language = {
     edu1: "Vocational School Complex named after Major Henryk Sucharski in Złotoryja Secondary education",
   },
 };
+
+const langBtn = document.getElementById("langBtn");
+
+export function changeLanguage(lang){
+    langBtn.addEventListener('click', ()=>{
+        if(lang === "pl"){
+            lang = "eng";
+            langBtn.innerHTML = '<img src="./public/assets/poland.png" alt="pl" width="40px" height="30px" style="border-radius: 10px;">';
+        } else {
+            lang = "pl";
+            langBtn.innerHTML = '<img src="./public/assets/united-kingdom.png" alt="eng" width="40px" height="30px" style="border-radius: 10px;">';
+        }
+
+        document.querySelectorAll("[data-key]").forEach((el)=>{
+            const key = el.getAttribute("data-key");
+            if(language[lang][key]){
+                el.textContent = language[lang][key];
+            }
+        });
+        
+    })
+
+}
