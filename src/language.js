@@ -107,8 +107,8 @@ export function changeLanguage() {
 //download
 export function download(){
   if(currentLang === 'pl'){
-    downloadLink.href = './public/arkadiuszkaszubacvpl.pdf'
+    downloadLink.href = './arkadiuszkaszubacvpl.pdf'
   }else if(currentLang === 'eng'){
-    downloadLink.href = './public/arkadiuszkaszubacveng.pdf'
+    downloadLink.href = './arkadiuszkaszubacveng.pdf'
   }
 }
