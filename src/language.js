@@ -66,3 +66,4 @@ const language = {
     edu1: "Vocational School Complex named after Major Henryk Sucharski in Złotoryja Secondary education",
   },
 };
+
