@@ -219,3 +219,14 @@ button{
     gap:0.3rem;
 }
 /* buttons ends */
+
+/*for pdf*/
+button{
+    display:none;
+}
+#download{
+    display:none;
+}
+#portfolio{
+    display:none;
+}
