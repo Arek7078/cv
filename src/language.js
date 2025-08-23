@@ -71,6 +71,8 @@ const langBtn = document.getElementById("langBtn");
 const langImg = langBtn.querySelector("img");
 let currentLang = "pl";
 
+const downloadLink = document.getElementById("download");
+
 export function changeLanguage() {
   langBtn.addEventListener("click", () => {
     if (currentLang === "pl") {
@@ -88,6 +90,7 @@ export function changeLanguage() {
         el.textContent = language[currentLang][key];
       }
     });
+    download();
   });
   // Ustaw język na starcie
   document.querySelectorAll("[data-key]").forEach((el) => {
@@ -96,4 +99,14 @@ export function changeLanguage() {
       el.textContent = language[currentLang][key];
     }
   });
+  
+}
+
+//download
+export function download(){
+  if(currentLang === 'pl'){
+    downloadLink.href = './public/arkadiuszkaszubacvpl.pdf'
+  }else if(currentLang === 'eng'){
+    downloadLink.href = './public/arkadiuszkaszubacveng.pdf'
+  }
 }

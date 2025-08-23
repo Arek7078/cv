@@ -1,3 +1,3 @@
-import { changeLanguage } from "./language";
+import { changeLanguage} from "./language";
 
 changeLanguage();
