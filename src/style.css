@@ -1,223 +1,284 @@
-:root{
-    --primary-color:rgb(50, 50, 50);
-    --left-container-color:rgb(225, 225, 225);
-    --rigth-container-color:rgb(248, 245, 245);
-    --text-color:white;
+:root {
+  --primary-color: rgb(50, 50, 50);
+  --accent-color: rgb(30, 130, 170);
+  --left-container-color: rgb(245, 245, 246);
+  --rigth-container-color: rgb(250, 248, 247);
+  --muted: rgb(120, 120, 120);
+  --text-color: #1f1f1f;
+  --surface-border: rgba(0, 0, 0, 0.06);
 }
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-body{
-    background-color:rgb(75, 71, 71);
-    font-family: Arial, Helvetica, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    
-    
+body {
+  background: linear-gradient(
+    180deg,
+    rgba(75, 71, 71, 0.12),
+    rgba(75, 71, 71, 0.08)
+  );
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  color: var(--text-color);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-main{
-    display:flex;
-    max-width:768px;
-    position:relative;
-    margin: 1rem 0.5rem;
-    border: 1px solid white;
-    box-shadow:0 0 10px rgba(0, 0, 0, 0.5);
-    
+main {
+  display: flex;
+  max-width: 820px;
+  width: 98%;
+  position: relative;
+  margin: 1rem 0.5rem;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--surface-border);
+  box-shadow: 0 6px 20px rgba(16, 24, 40, 0.08);
+  background: transparent;
+  animation: cardEnter 420ms cubic-bezier(0.2, 0.9, 0.2, 1);
+}
+
+@keyframes cardEnter {
+  from {
+    transform: translateY(6px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* typography */
+h1 {
+  font-family: "Poppins", Inter, sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.6px;
+  font-size: 1.4rem;
+}
+h2 {
+  font-family: "Poppins", Inter, sans-serif;
+}
+p,
+li,
+a {
+  transition: color 180ms ease, transform 180ms ease;
+}
+
+/* subtle hover effects */
+.info ul li:hover {
+  background: rgba(0, 0, 0, 0.02);
+  border-radius: 6px;
+  transform: translateX(2px);
+}
+.job1,
+.job2 {
+  transition: transform 220ms ease, box-shadow 220ms ease;
+}
+.job1:hover,
+.job2:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(16, 24, 40, 0.04);
 }
 /* contact start */
-.left-container{
-    background-color:var(--left-container-color);
-    max-width:45%;
-    
-    
+.left-container {
+  background-color: var(--left-container-color);
+  max-width:40%;
+  padding-bottom: 1.2rem;
 }
-.right-container{
-    background-color: var(--rigth-container-color);
-    max-width: 55%;
-    
+.right-container {
+  background-color: var(--rigth-container-color);
+  max-width:60%;
+  padding: 1rem 0.6rem;
 }
-.name{
-    max-width:100%;
-    height:26%;
-    background-color:var(--primary-color);
-    color:white;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:1rem;
-    text-align: center;
+.name {
+  max-width: 100%;
+  background-color: var(--primary-color);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.2rem 0.8rem;
+  font-size: 1.05rem;
+  text-align: center;
+  border-bottom-left-radius: 8px;
+  height: 15%;
 }
-.info{
-    width:100%;
-    padding:0.5rem;
-    margin-top:0.5rem;
-    
+.info {
+  width: 100%;
+  padding: 0.75rem 0.8rem;
+  margin-top: 0.5rem;
 }
-.info ul{
-    list-style:none;
-    
+.info ul {
+  list-style: none;
 }
-.info ul li{
-    padding:0.4rem;
-    display:flex;
-    align-items:center;
-    
+.info ul li {
+  padding: 0.4rem;
+  display: flex;
+  align-items: center;
 }
-.info ul li a{
-    text-decoration:none;
-    color: black;
-    font-size:0.7rem;
-    font-weight:600;
-    
+.info ul li a {
+  text-decoration: none;
+  color: var(--primary-color);
+  font-size: 0.82rem;
+  font-weight: 600;
 }
-.info ul li img{
-    margin-right:0.5rem;
+.info ul li img {
+  margin-right: 0.5rem;
 }
-p{
-    font-size:0.8rem;
-    color: var(--primary-color);
-    font-weight: bold;
-    ;
-    
+p {
+  font-size: 0.88rem;
+  color: var(--muted);
+  font-weight: 600;
 }
-hr{
-    border:2px solid black;
-    margin: 0.5rem 0 0.5rem 1rem;
-    width:20%;
+hr {
+  border: none;
+  height: 1px;
+  background: var(--surface-border);
+  margin: 0.75rem 0 0.75rem 1rem;
+  width: 22%;
 }
 /* contact ends */
 
 /* skills start */
-.skills{
-    width:100%;
-    padding:0.5rem;
-    margin-top:0.5rem;
+.skills {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.5rem;
 }
-h2{
-    font-size:1.4rem;
-    color: var(--primary-color);
-    margin: 0.5rem 0.5rem;
-    font-weight:700;
-    text-align: center;
+h2 {
+  font-size: 1.35rem;
+  color: var(--primary-color);
+  margin: 0.5rem 0.5rem;
+  font-weight: 700;
+  text-align: center;
+  letter-spacing: -0.2px;
 }
-.skills ul{
-    
-    display:flex;
-    justify-content: start;
-    flex-direction: column;
-    gap:0.5rem;
-    margin-top:1rem;
-    margin-left:2rem;
+.skills ul {
+  display: flex;
+  justify-content: start;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  margin-left: 2rem;
 }
-h3{
-    font-size:1.1rem;
-    color: var(--primary-color);
-    margin: 1rem;
-    font-weight:bold;
+.job1 h3,
+.job2 h3,
+h3 {
+  font-size: 1.05rem;
+  color: var(--primary-color);
+  margin: 0.6rem 0.6rem;
+  font-weight: 700;
 }
-.progLang{
-    display:flex;
-    flex-direction: column;
-    gap:0.5rem;
-    margin:1rem;
+.progLang {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin: 0.6rem 1rem;
+  color: var(--muted);
+  font-weight: 600;
 }
 /* skills end */
 
 /* languages start */
-.languages{
-    width:100%;
-    padding:0.5rem;
-    margin-top:0.5rem;
+.languages {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.5rem;
 }
-.languages ul{
-    display:flex;
-    justify-content: start;
-    flex-direction: column;
-    gap:0.5rem;
-    margin-top:1rem;
-    margin-left:2rem;
+.languages ul {
+  display: flex;
+  justify-content: start;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  margin-left: 2rem;
 }
 /* languages end */
 /* expierience start */
-.experience{
-    
-    width:100%;
-    margin-top: 5rem;
+.experience {
+  width: 100%;
+  margin-top: 3.5rem;
 }
-h3{
-    margin-top: 2rem;
+.experience h3 {
+  margin-top: 2rem;
 }
-.experience ul{
-    list-style:none;
-    display:flex;
-    flex-direction: column;
-    gap:1rem;
-    margin:1rem;
+.experience ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  margin: 0.8rem 0.6rem;
 }
-.job1{
-    margin-bottom:3rem;
+.job1 {
+  margin-bottom: 3rem;
 }
 /* expierience ends */
 /* courses start */
-.courses{
-    width:100%;
-    margin-top: 2rem;
-    margin-bottom:3rem;
+.courses {
+  width: 100%;
+  margin-top: 1.5rem;
+  margin-bottom: 2rem;
 }
-.courses ul{
-    list-style:none;
-    display:flex;
-    flex-direction: column;
-    gap:0.5rem;
-    padding: 1rem;
+.courses ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: 0.6rem 0.6rem;
 }
-
 
 /* courses ends */
 /* education starts */
-.education{
-    width:100%;
-    margin-top: 2rem;
-    margin-bottom:1rem;
+.education {
+  width: 100%;
+  margin-top: 1.2rem;
+  margin-bottom: 1rem;
 }
-.education ul{
-    list-style:none;
-    display:flex;
-    flex-direction: column;
-    gap:0.5rem;
-    padding: 1rem;
+.education ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: 0.6rem 0.6rem;
 }
 /* education ends */
 /* buttons start */
-button{
-    position:absolute;
-    top:1.2rem;
-    right:1rem;
-    border: none;
-    cursor: pointer;
-    
-    
-    
+#lang button,
+button {
+  position: absolute;
+  top: 1.2rem;
+  right: 1rem;
+  border: none;
+  cursor: pointer;
+  background: transparent;
+  padding: 0;
 }
-#download{
-    position:absolute;
-    top:1rem;
-    right:5rem;
-    text-decoration:none;
-    color:white;
-    background-color:var(--primary-color);
-    padding:0.5rem;
-    border-radius:5px;
-    font-size:0.8rem;
-    display:flex;
-    align-items:center;
-    gap:0.3rem;
+#download {
+  position: absolute;
+  top: 1rem;
+  right: 5rem;
+  text-decoration: none;
+  color: white;
+  background-color: var(--primary-color);
+  padding: 0.45rem 0.6rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  box-shadow: 0 6px 14px rgba(16, 24, 40, 0.06);
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+#download:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(16, 24, 40, 0.08);
 }
 /* buttons ends */
 
@@ -232,41 +293,66 @@ button{
     display:none;
 } */
 @media screen and (max-width: 600px) {
-    h1{
-        font-size: 1.5rem;
-    }
-    h2{
-        font-size: 1rem;
-    }
-    h3{
-        font-size: 0.8rem;
-    }
-    .name{
-        height: 15%;
-    }
-    p{
-        font-size: 0.7rem;
-    }
-    li{
-        font-size: 0.7rem;
-    }
-    a{
-        font-size: 0.1rem;
-    }
-    .job1{
-        margin-bottom:0.5rem;
-    }
-    img{
-        width:15px;
-        height:15px;
-    }
-    .info ul li a{
-        font-size:0.6rem;
-    }
-    .courses{
-        margin-bottom:1rem;
-    }
-    .education{
-        margin-top:0.5rem;
-    }
+  h1 {
+    font-size: 1.5rem;
+  }
+  h2 {
+    font-size: 0.8rem;
+  }
+  h3 {
+    font-size: 0.6rem;
+  }
+  .name {
+    height: 200px;
+    padding: 0.8rem 0.6rem;
+  }
+  p {
+    font-size: 0.7rem;
+  }
+  li {
+    font-size: 0.7rem;
+  }
+  a {
+    font-size: 0.1rem;
+  }
+  .job1 {
+    margin-bottom: 0.5rem;
+  }
+  img {
+    width: 10px;
+    height: 10px;
+  }
+  .info ul li a {
+    font-size: 0.4rem;
+  }
+  
+  .courses {
+    margin-bottom: 1rem;
+  }
+  .education {
+    margin-top: 3rem;
+    
+  }
+  .left-container {
+    max-width: 50%;
+  }
+  .right-container {
+    max-width: 50%;
+  }
+  #download{
+    top: 0.5rem;
+    right: 4rem;
+    padding: 0.3rem 0.4rem;
+    font-size: 0.6rem;
+  }
+  #languageImg{
+    width: 30px;
+    height: 25px;
+    
+  }
+  #langBtn{
+    top: 0.5rem;
+    right: 1rem;
+  }
+  
 }
