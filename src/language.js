@@ -70,22 +70,17 @@ const language = {
 };
 
 const langBtn = document.getElementById("langBtn");
-const langImg = langBtn.querySelector("img");
+
 let currentLang = "pl";
 
 const downloadLink = document.getElementById("download");
 
 export function changeLanguage() {
   langBtn.addEventListener("click", () => {
-    if (currentLang === "pl") {
-      currentLang = "eng";
-      langImg.src = "./public/assets/poland.png";
-      langImg.alt = "pl";
-    } else {
-      currentLang = "pl";
-      langImg.src = "./public/assets/united-kingdom.png";
-      langImg.alt = "eng";
-    }
+
+    currentLang = currentLang === "pl" ? "eng" : "pl";
+
+
     document.querySelectorAll("[data-key]").forEach((el) => {
       const key = el.getAttribute("data-key");
       if (language[currentLang][key]) {
@@ -93,6 +88,7 @@ export function changeLanguage() {
       }
     });
     download();
+    updateLangButton();
   });
   // Ustaw język na starcie
   document.querySelectorAll("[data-key]").forEach((el) => {
@@ -105,10 +101,18 @@ export function changeLanguage() {
 }
 
 //download
-export function download(){
+   function download(){
   if(currentLang === 'pl'){
     downloadLink.href = './arkadiuszkaszubacvpl.pdf'
   }else if(currentLang === 'eng'){
     downloadLink.href = './arkadiuszkaszubacveng.pdf'
+  }
+}
+// change background image of langBtn
+   function updateLangButton() {
+  if (currentLang === "pl") {
+    langBtn.style.backgroundImage = "url('../public/assets/united-kingdom.png')";
+  } else {
+    langBtn.style.backgroundImage = "url('../public/assets/poland.png')";
   }
 }

@@ -250,8 +250,7 @@ h3 {
 }
 /* education ends */
 /* buttons start */
-#lang button,
-button {
+#langBtn {
   position: absolute;
   top: 1.2rem;
   right: 1rem;
@@ -259,7 +258,14 @@ button {
   cursor: pointer;
   background: transparent;
   padding: 0;
+  background-image: url('../public/assets/united-kingdom.png');
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  width: 40px;
+  height: 30px;
 }
+
 #download {
   position: absolute;
   top: 1rem;
@@ -275,10 +281,14 @@ button {
   gap: 0.45rem;
   box-shadow: 0 6px 14px rgba(16, 24, 40, 0.06);
   transition: transform 160ms ease, box-shadow 160ms ease;
+  
 }
 #download:hover {
   transform: translateY(-2px);
   box-shadow: 0 12px 30px rgba(16, 24, 40, 0.08);
+}
+#download p{
+  color:white;
 }
 /* buttons ends */
 
