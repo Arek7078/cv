@@ -111,8 +111,10 @@ export function changeLanguage() {
 // change background image of langBtn
    function updateLangButton() {
   if (currentLang === "pl") {
-    langBtn.style.backgroundImage = "url('../public/assets/united-kingdom.png')";
+    // langBtn.style.backgroundImage = "url('../public/assets/united-kingdom.png')";
+    langBtn.style.backgroundImage = "url('https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Flag_of_the_United_Kingdom_%281-2%29.svg/1200px-Flag_of_the_United_Kingdom_%281-2%29.svg.png')";
   } else {
-    langBtn.style.backgroundImage = "url('../public/assets/poland.png')";
+    // langBtn.style.backgroundImage = "url('../public/assets/poland.png')";
+    langBtn.style.backgroundImage = "url('https://upload.wikimedia.org/wikipedia/en/1/12/Flag_of_Poland.svg')";
   }
 }
